@@ -6,7 +6,7 @@ This template provides a minimal setup to get **React** working in **Vite** with
 
 You can check out the live version of the app here:
 
-- [Live Blogging App URL](https://bloging-app-by-farhan.web.app/)
+- [Live Blogging App URL]([https://bloging-app-by-farhan.web.app/](https://www.figma.com/design/VLTs2H0KsZFda7DzdQdbdn/Free-Blog-Website-Template-(Community)?t=lFmpFE9albfJovsi-0))
 
 ## Features
 
