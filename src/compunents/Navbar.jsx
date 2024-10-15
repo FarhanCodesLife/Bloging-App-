@@ -9,13 +9,18 @@ const Navbar = () => {
 
   return (
 <>
-<div className="navbar bg-base-1 bg-[#7749F8]">
+<div className="navbar bg-base-1 bg-[#f7f7f7]">
   <div className="flex-1">
-    <a className="btn btn-ghost text-xl">Bloging App</a>
+    <div className=' w-20 rounded-full ml-5  overflow-hidden'>
+
+    <img  src="https://i.pinimg.com/originals/db/a1/a7/dba1a72669895c3b4420b762433a5461.png" alt="logo" />
+    </div>
+    <a className=" font-bold text-xl text-[#000000]">Bloging App</a>
   </div>
   <div className="flex-none">
     <ul className="menu menu-horizontal  text-lg font-bold">
-      <li><Link to='login'>login</Link></li>
+      <li><Link to='login'>Blog</Link></li>
+      <li><Link to='login'>About</Link></li>
       <li>
         <details className='z-10'>
           <summary>Manu</summary>
