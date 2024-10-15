@@ -1,7 +1,25 @@
-# React + Vite
+# React Blogging App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a minimal setup to get **React** working in **Vite** with fast HMR (Hot Module Replacement) for seamless development. The app uses Firebase for authentication and Firestore for data storage. The design is responsive and built with Tailwind CSS.
 
-Currently, two official plugins are available:
+## Live Blogging App
 
-- [Live Bloging App Url] ([LIVE](https://66f9afbcebc91a857b5c2e7e--famous-tapioca-3fb4d7.netlify.app/)) for Fast Refresh
+You can check out the live version of the app here:
+
+- [Live Blogging App URL](https://bloging-app-by-farhan.web.app/)
+
+## Features
+
+- **Fast Development**: Using Vite for faster development and Hot Module Replacement (HMR).
+- **User Authentication**: Firebase Authentication for handling user login and registration.
+- **Blog Creation**: Create, view, and manage blogs in real-time using Firebase Firestore.
+- **Responsive Design**: Mobile-friendly design powered by Tailwind CSS.
+- **Like Functionality**: Users can like blog posts, with a dynamic like count.
+
+## Tech Stack
+
+- **React**: Frontend JavaScript library.
+- **Vite**: Next-generation front-end tool for fast development.
+- **Firebase**: Authentication and Firestore database.
+- **Tailwind CSS**: Utility-first CSS framework.
+- **Netlify**: Deployed on Netlify for quick hosting and continuous deployment.
