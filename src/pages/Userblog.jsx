@@ -36,7 +36,7 @@ useEffect(()=>{
       {/* <div className='m-5' ><button onClick={()=>navigate('allblogs')} className=' btn-primary text-black hover:scale-105'>  <kbd className="kbd btn-ghost">◀︎</kbd>All Blogs</button></div> */}
     
 
-      <div className="grid  gap-8">
+      <div className="grid px-32 gap-8">
         {/* Show a loading spinner while fetching user data */}
         {blogs == null ? (
           <span className=" flex loading loading-dots loading-lg"></span>
@@ -52,6 +52,9 @@ useEffect(()=>{
               className="w-24 h-24 rounded-full border-2 border-gray-300 mr-4 object-cover"
               />
             <div>
+
+
+              
               <h2 className="text-xl font-semibold">{blogs[0].userinfo.userData.firstname}</h2>
               <p className="text-gray-600">{blogs[0].userinfo.userData.email}</p>
             </div>
@@ -59,7 +62,7 @@ useEffect(()=>{
               </div>
             }
             {blogs.length > 0 ? blogs.map((item, index) => (
-              <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
+              <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden ">
               <div className="flex items-center p-4">
                   <img
                     src={item.userinfo.userImage}
@@ -73,6 +76,16 @@ useEffect(()=>{
                     )}
                   </div>
                 </div>
+
+
+                <div className=' items-center'>
+                <img
+                    src={item.blogImage}
+                    alt={`${item.userinfo.email}'s profile`}
+                    className="w-[80%] h-[80%]  border-2 border-gray-300 m-auto my-10 object-cover p-5  transition-transform transform hover:scale-105 duration-600"
+                  />
+                </div>
+                
                 <h2 className="text-3xl px-6">{item.title}</h2>
 
                 <p className="text-gray-600 p-4 mb-4">{item.description}</p>

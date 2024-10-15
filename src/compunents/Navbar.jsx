@@ -12,10 +12,11 @@ const Navbar = () => {
 <div className="navbar bg-base-1 bg-[#f7f7f7]">
   <div className="flex-1">
     <div className=' w-20 rounded-full ml-5  overflow-hidden'>
-
+    <Link to=''>
     <img  src="https://i.pinimg.com/originals/db/a1/a7/dba1a72669895c3b4420b762433a5461.png" alt="logo" />
+    </Link>
     </div>
-    <a className=" font-bold text-xl text-[#000000]">Bloging App</a>
+    <a className=" font-bold text-xl text-[#000000]"><Link to=''>Bloging App</Link></a>
   </div>
   <div className="flex-none">
     <ul className="menu menu-horizontal  text-lg font-bold">

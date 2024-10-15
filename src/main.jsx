@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './Layout.jsx'
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
-import AllBlogs from './pages/AllBlogs.jsx'
+import AllBlogs from './pages/SingleBlog.jsx'
 import Profile from './pages/Profile.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import Userblog from './pages/Userblog.jsx'
@@ -15,9 +15,12 @@ let router = createBrowserRouter([{
   children:[
     {
       path:'',
-      element:<AllBlogs/>
+      element:<App/>
     },
     {
+      path:'/single/:blogid',
+      element:<AllBlogs/>,
+    },{
       path:'login',
       element:<Login/>,
     },
@@ -37,7 +40,7 @@ let router = createBrowserRouter([{
       path:'dashboard',
       element:<Dashboard/>
     },{
-      path:"/userblog/:uid",
+      path:"/single/:blogid/userblog/:uid",
        element:<Userblog />
     }
   ]
