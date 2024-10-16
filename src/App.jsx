@@ -40,7 +40,7 @@ useEffect(() => {
       const querySnapshot = await getDocs(collection(db, "blogs"));
       const blogsArray = [];  // Temporary array to store blogs
       querySnapshot.forEach((doc) => {
-        console.log(doc.id, " => ", doc.data());
+        // console.log(doc.id, " => ", doc.data());
         blogsArray.push({ ...doc.data(), blogid: doc.id });  // Store blog data
       });
       setBlogs(blogsArray);  // Set blogs state with the new array
@@ -69,7 +69,7 @@ function userblog(blogid) {
   return (
     <>
      <h1 className="text-3xl font-semibold text-center m-8 ">User Blogs</h1>
-<div className="grid grid-cols-3 px-20    gap-8">
+<div className="grid sm:grid-cols-3 px-20    gap-8">
   
   {blogs.length > 0 ? blogs.map((item, index) => (
     
@@ -97,12 +97,12 @@ function userblog(blogid) {
       </div> */}
 
 
-      <h2 className="text-3xl px-6">{item.title}</h2>
+      <h2 className="sm:text-2xl px-6">{item.title}</h2>
 
 
 
 
-      <p className="text-gray-600 p-4 mb-4">{item.description.split(0,30)}</p>
+      <p className="text-gray-600 p-4 mb-4">{item.description}</p>
       <div key={item} className="flex justify-between items-center p-4 border-t">
         <button onClick={()=>setlike(1 + like)} className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-200">
           Like
@@ -116,7 +116,7 @@ function userblog(blogid) {
 </div>
 
     </>
-  );
+  )
 }
 
 export default App
