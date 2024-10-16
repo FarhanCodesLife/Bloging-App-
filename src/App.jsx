@@ -102,7 +102,7 @@ function userblog(blogid) {
 
 
 
-      <p className="text-gray-600 p-4 mb-4">{item.description}</p>
+      <p className="text-gray-600 p-4 mb-4">{item.description.split(0,30)}</p>
       <div key={item} className="flex justify-between items-center p-4 border-t">
         <button onClick={()=>setlike(1 + like)} className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-200">
           Like
