@@ -147,92 +147,98 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="container mx-auto p-6">
-      <h1 className="text-4xl font-bold text-center mb-8">Dashboard</h1>
+    <div className="container mx-auto p-6 bg-gray-50 min-h-screen">
+      <h1 className="text-4xl font-bold text-center mb-8 text-indigo-800">My Dashboard</h1>
 
       {/* Blog Form */}
-      <form onSubmit={sendDatatoFirestore} className="bg-white shadow-md rounded-lg p-8 mb-10">
+      <form onSubmit={sendDatatoFirestore} className="bg-white shadow-xl rounded-lg p-8 mb-10 max-w-2xl mx-auto">
+        <h2 className="text-2xl font-semibold mb-6 text-gray-800">Create New Blog</h2>
         
-        
-      <div className="mb-5">
-      <input type="file" ref={fileInputRef} accept="image/*"
-      className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-      required /> {/* File input for image */}
-
-         
+        <div className="mb-5">
+          <label className="block text-gray-700 mb-2">Upload Image</label>
+          <input 
+            type="file" 
+            ref={fileInputRef} 
+            accept="image/*"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
+            required 
+          />
         </div>
         
         <div className="mb-5">
+          <label className="block text-gray-700 mb-2">Blog Title</label>
           <input 
             type="text" 
-            placeholder="Enter blog title" 
+            placeholder="Enter an engaging title" 
             ref={titleRef} 
             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
         </div>
-        <div className="mb-5">
+
+        <div className="mb-6">
+          <label className="block text-gray-700 mb-2">Blog Content</label>
           <textarea 
-            cols="25" 
-            rows="5" 
-            placeholder="Enter blog description" 
+            placeholder="Write your blog content here..." 
             ref={descriptionRef} 
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 min-h-[150px]"
           ></textarea>
         </div>
+
         <button 
           type="submit" 
-          className="w-full bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-500 transition duration-300"
+          className="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-300 font-semibold shadow-md hover:shadow-lg"
         >
-          Add Blog
+          Publish Blog
         </button>
       </form>
 
-      {/* User Blogs */}
-      <h1 className="text-3xl font-semibold text-center mb-8">User Blogs</h1>
+      {/* User Blogs Section */}
+      <h2 className="text-3xl font-semibold text-center mb-8 text-indigo-800">My Blog Posts</h2>
 
-      <div className="grid grid-cols-1  gap-8">
-        {/* Show a loading spinner while fetching user data */}
+      <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
         {userinfo === null ? (
-          <span className="loading loading-dots loading-lg"></span>
+          <div className="flex justify-center">
+            <span className="loading loading-dots loading-lg text-indigo-600"></span>
+          </div>
         ) : (
           <>
             {blogs.length > 0 ? blogs.map((item, index) => (
-              <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-                <div className="flex items-center p-4">
+              <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div className="flex items-center p-6 border-b">
                   <img
                     src={item.userinfo.userImage}
                     alt={`${item.userinfo.email}'s profile`}
-                    className="w-14 h-14 rounded-full border-2 border-gray-300 mr-4 object-cover"
+                    className="w-16 h-16 rounded-full border-2 border-indigo-200 mr-4 object-cover"
                   />
                   <div>
-                    <h2 className="text-xl font-semibold">{item.title}</h2>
+                    <h2 className="text-2xl font-semibold text-gray-800">{item.title}</h2>
                     {item.userinfo && (
-                      <p className="text-gray-500 text-sm">Posted by: {item.userinfo.userData.email}</p>
+                      <p className="text-gray-600">Posted by: {item.userinfo.userData.email}</p>
                     )}
                   </div>
                 </div>
 
-
-                <div className='w-full items-center'>
-                <img
+                <div className="p-4">
+                  <img
                     src={item.blogImage}
-                    alt={`${item.userinfo.email}'s profile`}
-                    className="w-[80%] h-[80%]  border-2 border-gray-300 m-auto my-10 object-cover   transition-transform transform hover:scale-105 duration-600"
+                    alt={`Blog image for ${item.title}`}
+                    className="w-full h-[400px] object-cover rounded-lg shadow-md hover:scale-[1.02] transition-transform duration-300"
                   />
                 </div>
-                <p className="text-gray-600 p-4 mb-4">{item.description}</p>
 
+                <p className="text-gray-700 p-6 leading-relaxed">{item.description}</p>
 
-
-                <div className="flex justify-between items-center p-4 border-t">
-                  <button className="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-200">
-                    Like
+                <div className="flex justify-between items-center p-6 bg-gray-50">
+                  <button className="bg-indigo-600 text-white py-2 px-6 rounded-lg hover:bg-indigo-700 transition duration-200 flex items-center gap-2">
+                    <span>❤️</span> Like
                   </button>
-                  <span className="text-gray-500">Likes: {item.likesCount || 0}</span>
+                  <span className="text-gray-600 font-medium">Likes: {item.likesCount || 0}</span>
                 </div>
               </div>
             )) : (
-              <h2 className="text-xl font-semibold text-center col-span-full">No blogs found</h2>
+              <div className="text-center py-10 bg-white rounded-lg shadow">
+                <h2 className="text-xl text-gray-600">No blogs found. Create your first blog post!</h2>
+              </div>
             )}
           </>
         )}

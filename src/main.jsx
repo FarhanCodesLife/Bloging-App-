@@ -9,6 +9,8 @@ import AllBlogs from './pages/SingleBlog.jsx'
 import Profile from './pages/Profile.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import Userblog from './pages/Userblog.jsx'
+import About from './pages/About.jsx'
+import Contact from './pages/Contact.jsx'
 let router = createBrowserRouter([{
   path:'/',
   element:<Layout/>,
@@ -20,10 +22,20 @@ let router = createBrowserRouter([{
     {
       path:'/single/:blogid',
       element:<AllBlogs/>,
-    },{
+    },
+    {
       path:'login',
       element:<Login/>,
     },
+    {
+      path:'about',
+      element:<About/>,
+    },
+    {
+      path:'contact',
+      element:<Contact/>,
+    },
+    
     {
       path:'register',
       element:<Register/>
@@ -48,10 +60,5 @@ let router = createBrowserRouter([{
 
 
 createRoot(document.getElementById('root')).render(
-  <>
-  <RouterProvider router={router} >
-
-    <App />
-  </RouterProvider>
-  </>
+  <RouterProvider router={router} />
 )
