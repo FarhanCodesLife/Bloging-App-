@@ -43,7 +43,7 @@ const Singleblog = () => {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section with Blog Image */}
       {blog && (
-        <div className="relative h-[60vh] w-[100vw] mx-auto">
+        <div className="relative h-[500px] w-[1000px] mx-auto rounded-lg overflow-hidden my-8">
           <div className="absolute inset-0 bg-black/30 z-10" />
           <img
             src={blog.blogImage}
