@@ -82,9 +82,9 @@ const Contact = () => {
       <div className="mt-12 text-center">
         <h2 className="text-xl font-semibold mb-4">Other Ways to Reach Us</h2>
         <div className="space-y-2">
-          <p>Email: contact@example.com</p>
-          <p>Phone: (123) 456-7890</p>
-          <p>Address: 123 Main Street, City, Country</p>
+          <p>Email: farhansmit0318@gmail.com</p>
+          <p>Phone: +923182127256</p>
+          <p>Address: karachi pakistan</p>
         </div>
       </div>
     </div>

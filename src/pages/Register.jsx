@@ -66,82 +66,80 @@ const Register = () => {
   }
 
   return (
-    <>
-      <div className='bg-gray-200 h-screen overflow-hidden'>
-        <div className='bg-white'>
-          <h1 className='px-14 py-5 text-5xl mb-10 font-bold'>Register</h1>
-        </div>
-
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Create Account</h1>
         
-        {user && <div role="alert" className="alert alert-success">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-6 w-6 shrink-0 stroke-current"
-    fill="none"
-    viewBox="0 0 24 24">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-  </svg>
-  <span>Your Rigisteration has been confirmed!</span>
-</div> } 
-
-        <div className='w-full h- flex justify-center mt-20'>
-          <div className='w-[20rem] m-auto'>
-            <form onSubmit={getUser}>
-              <label className="input input-bordered flex items-center gap-2 mt-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 16 16"
-                  fill="currentColor"
-                  className="h-4 w-4 opacity-70">
-                  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
-                </svg>
-                <input type="text" className="grow" ref={firstnameval } required placeholder="Firstname" />
-              </label>
-
-              <label className="input input-bordered flex items-center gap-2 mt-2">
-                <svg
-                
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 16 16"
-                  fill="currentColor"
-                  className="h-4 w-4 opacity-70">
-                  <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
-                  <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
-                </svg>
-                <input type="email" className="grow" ref={emailval} required placeholder="Email" />
-              </label>
-
-              <label className="input input-bordered flex items-center gap-2 mt-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 16 16"
-                  fill="currentColor"
-                  className="h-4 w-4 opacity-70">
-                  <path fillRule="evenodd" d="M14 6a4 4 0 1 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z" />
-                </svg>
-                <input type="password" className="grow" ref={passwordval} required placeholder="Password" />
-              </label>
-
-              <label className="input input-bordered flex items-center gap-2 mt-2">
-                <span className="text-gray-600">Upload Image:</span>
-                <input type="file" ref={fileInputRef} accept="image/*" required /> {/* File input for image */}
-              </label>
-
-              <div className='text-center'>
-                <button className='btn mt-4 bg-[#7749F8] border-none text-lg px-6 rounded-2xl' type='submit'>
-                  {}
-                  Register
-                </button>
-              </div>
-            </form>
+        {user && (
+          <div className="mb-6 p-4 bg-green-100 text-green-700 rounded-lg flex items-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Registration successful!</span>
           </div>
-        </div>
+        )}
+
+        <form onSubmit={getUser} className="space-y-4">
+          <div className="space-y-6">
+            <label className="block">
+              <span className="text-gray-700 text-sm font-semibold mb-2">First Name</span>
+              <input
+                type="text"
+                className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                ref={firstnameval}
+                required
+                placeholder="Enter your first name"
+              />
+            </label>
+
+            <label className="block">
+              <span className="text-gray-700 text-sm font-semibold mb-2">Email</span>
+              <input
+                type="email"
+                className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                ref={emailval}
+                required
+                placeholder="Enter your email"
+              />
+            </label>
+
+            <label className="block">
+              <span className="text-gray-700 text-sm font-semibold mb-2">Password</span>
+              <input
+                type="password"
+                className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                ref={passwordval}
+                required
+                placeholder="Create a password"
+              />
+            </label>
+
+            <label className="block">
+              <span className="text-gray-700 text-sm font-semibold mb-2">Profile Picture</span>
+              <input
+                type="file"
+                ref={fileInputRef}
+                accept="image/*"
+                required
+                className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100"
+              />
+            </label>
+          </div>
+
+          <button
+            type="submit"
+            className="w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-md shadow-sm transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+          >
+            Register
+          </button>
+        </form>
       </div>
-    </>
+    </div>
   );
 };
 
