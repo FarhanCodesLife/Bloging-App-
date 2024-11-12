@@ -74,19 +74,19 @@ const Navbar = () => {
               </button>
 
               {/* User Dropdown */}
+                {user ?
               <div className="relative group">
                 <button className="flex items-center space-x-2 p-2 rounded-full hover:bg-gray-100 transition-colors">
                   <img 
                     className="h-8 w-8 rounded-full object-cover border-2 border-indigo-600"
                     src={user?.photoURL || "https://ui-avatars.com/api/?name=User&background=6366f1&color=fff"}
                     alt="profile" 
-                  />
+                    />
                   <svg className="w-4 h-4 text-gray-400 group-hover:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
 
-                {/* Dropdown Menu */}
                 <div className="absolute z-10 right-0 w-56 mt-2 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-right">
                   <div className="p-4 border-b">
                     <p className="text-sm font-medium text-gray-900">Signed in as</p>
@@ -127,6 +127,14 @@ const Navbar = () => {
                   </div>
                 </div>
               </div>
+:
+<Link to='login'>
+<button>
+  Login
+  </button>
+</Link>
+  }
+                {/* Dropdown Menu */}
             </div>
           </div>
         </div>
