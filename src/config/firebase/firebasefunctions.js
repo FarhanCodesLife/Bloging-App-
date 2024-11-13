@@ -128,7 +128,6 @@ import {
     })
   }
   
-  //Delete document by id
   const deleteDocument = async (id, name) => {
     return new Promise((resolve, reject) => {
       deleteDoc(doc(db, name, id));
