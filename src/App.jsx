@@ -44,10 +44,10 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-    <div className='w-full h-screen'>
-      <img src="https://outreachmonks.com/wp-content/uploads/2024/01/How-to-Write-a-Blog-Post.jpg.webp" alt="blog" />
-    </div>
       <header className="bg-white shadow-sm">
+    <div className='w-full h-96'>
+      <img className='overflow-hidden w-full h-full object-cover' src="https://outreachmonks.com/wp-content/uploads/2024/01/How-to-Write-a-Blog-Post.jpg.webp" alt="blog" />
+    </div>
         <h1 className="text-4xl font-bold text-center py-8 text-gray-800">
           Featured Blogs
         </h1>
