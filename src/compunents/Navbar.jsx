@@ -55,6 +55,9 @@ const Navbar = () => {
               <Link to="/contact" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 transition-colors">
                 Contact
               </Link>
+              <Link to="/gallery" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 transition-colors">
+                Pdf Gallery
+              </Link>
             </div>
 
             {/* Right side - User Menu */}

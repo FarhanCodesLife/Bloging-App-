@@ -7,6 +7,7 @@ import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
 import AllBlogs from './pages/SingleBlog.jsx'
 import Profile from './pages/Profile.jsx'
+import PdfGallery from './pages/PdfGallery.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import Userblog from './pages/Userblog.jsx'
 import About from './pages/About.jsx'
@@ -47,6 +48,10 @@ let router = createBrowserRouter([{
     {
       path:'profile',
       element:<Profile/>
+    },
+    {
+      path:'gallery',
+      element:<PdfGallery/>
     },
     {
       path:'dashboard',
